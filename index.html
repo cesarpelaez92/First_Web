@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/estilos.css">
   </head>
   <body>
-    <i class="icon-menu"></i>
+    <i class="icon-menu burger-buttom" id="burger-menu"></i>
     <header class="header">
       <div class="container">
         <figure class="logo">
@@ -120,7 +120,20 @@
       </div>
     </section>
      <footer class="footer">
-      
     </footer> 
+    <script>
+      const menu = document.querySelector('.menu');
+
+      const burgerButtom = document.querySelector('#burger-menu');
+      console.log(burgerButtom);
+      
+
+      function hideShow() {
+        menu.classList.toggle('is-active');
+      }
+       
+      burgerButtom.addEventListener('click', hideShow)
+
+    </script>
   </body>
 </html>
