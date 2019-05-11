@@ -22,7 +22,7 @@
               <a class="link" href="#portafolio">Portafolio</a>
             </li>
             <li>
-              <a class="link" href="#eventos">Experiencia</a>
+              <a class="link" href="#eventos">Estudios</a>
             </li>
             <li>
               <a class="link" href="#contacto">Trabajemos juntos</a>
@@ -112,27 +112,44 @@
           <button>Enviar</button>
         </form>
         <div class="social">
-          <a href="https://twitter.com/leonidasesteban" class="social-link twitter"></a>
-          <a href="https://facebook.com/leonidas.esteban" class="social-link facebook"></a>
-          <a href="https://github.com/leonidasesteban" class="social-link github"></a>
-          <a href="https://instagram.com/leonidasesteban" class="social-link instagram"></a>
+          <a href="https://twitter.com" class="social-link twitter"></a>
+          <a href="https://facebook.com" class="social-link facebook"></a>
+          <a href="https://github.com/cesarpelaez92" class="social-link github"></a>
+          <a href="https://www.instagram.com/cesarpelaez35" class="social-link instagram"></a>
         </div>
       </div>
     </section>
      <footer class="footer">
     </footer> 
     <script>
+      const ipad = window.matchMedia('screen and (max-width: 767px)'); 
       const menu = document.querySelector('.menu');
-
       const burgerButtom = document.querySelector('#burger-menu');
-      console.log(burgerButtom);
       
+      ipad.addListener(validation)
 
+      function validation(event){
+
+        if (event.matches) {
+          burgerButtom.addEventListener('click', hideShow)
+        }
+        else{
+          burgerButtom.removeEventListener('click', hideShow)
+        }  
+
+        validation(ipad);
+          
+      }
       function hideShow() {
-        menu.classList.toggle('is-active');
+        if (menu.classList.contains('is-active')) {
+          menu.classList.remove('is-active');
+        }
+        else{
+          menu.classList.add('is-active');
+        }
       }
        
-      burgerButtom.addEventListener('click', hideShow)
+     
 
     </script>
   </body>
